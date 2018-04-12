@@ -136,5 +136,6 @@ public class PP_FP04 {
         }
         out.print("\nDescrição: ");
         out.println(despesasUser2.getDesciptionFood());
+        // exer 3.2
     }
 }
