@@ -5,7 +5,7 @@
  */
 package pp_fp04;
 import static java.lang.System.out;
-
+import pp_fp04.exchange.CurrencyRates;
 /**
  *
  * @author Isabel Silva
@@ -19,6 +19,7 @@ public class PP_FP04 {
     static User user2;
     static Expense despesasUser1;
     static Expense despesasUser2;
+    CurrencyRates conversao = new CurrencyRates();
     
     public static void main(String[] args) {
         double totalGasto = 0.0, medioGasto = 0.0;
@@ -84,6 +85,7 @@ public class PP_FP04 {
         out.println(despesasUser1.getDesciptionFood());
         
         /* USER 2 */
+        
         id = new char[]{'X','F','X'};
         name = new char[]{'I','s','a','b','e','l'};
         email = new char[]{'i','s','a','b','e','l','@','e','t','g','f','.','i','p','p','.','p','t'};
