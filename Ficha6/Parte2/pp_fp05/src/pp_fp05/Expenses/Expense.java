@@ -13,7 +13,7 @@ public class Expense {
     /** 
      * Tipo da despesa ({@link Expense})
      */
-    private String type;
+    private DESPESA type;
     /**
      * Valor da despesa ({@link Expense})
      */
@@ -23,9 +23,9 @@ public class Expense {
      */
     private Date data;
     /**
-     * Tipo de Moeda ({@link Expense})
+     * Tipo de MOEDA ({@link Expense})
      */
-    private String Moeda;
+    private MOEDA Moeda;
     /**
      * Metodo construtor para a criação de uma instância de @Expense, tendo por
      * base todos os atributos de despesa ({@link Expense})
@@ -37,13 +37,13 @@ public class Expense {
      * ({@link Expense})
      */
     
-    Expense(int tempNumber, String tempType, float tempValue, Date tempDate){
+    Expense(int tempNumber, DESPESA tempType, float tempValue, Date tempDate){
         this.number = tempNumber;
         this.type = tempType;
         this.value = tempValue;
         this.data = tempDate;
     }
-    Expense(int tempNumber, String tempType, float tempValue, Date tempDate, String currencyType){
+    Expense(int tempNumber, DESPESA tempType, float tempValue, Date tempDate, MOEDA currencyType){
         if(currencyType.equals(this.Moeda)){
             this.number = tempNumber;
             this.type = tempType;
@@ -57,7 +57,7 @@ public class Expense {
         return this.number;
     }
 
-    public String getType() {
+    public DESPESA getType() {
         return this.type;
     }
 
@@ -69,12 +69,28 @@ public class Expense {
         return this.data;
     }
 
-    public String getMoeda() {
+    public MOEDA getMoeda() {
         return this.Moeda;
     }
 
-    public void setMoeda(String Moeda) {
+    public void setMoeda(MOEDA Moeda) {
         this.Moeda = Moeda;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setType(DESPESA type) {
+        this.type = type;
+    }
+
+    public void setValue(float value) {
+        this.value = value;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
     
 }

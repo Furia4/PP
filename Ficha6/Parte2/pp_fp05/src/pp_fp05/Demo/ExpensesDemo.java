@@ -9,6 +9,7 @@ import static java.lang.System.out;
 import java.util.Arrays;
 import java.util.Date;
 import pp_fp05.Expenses.Expense;
+import pp_fp05.Expenses.GENERO;
 import pp_fp05.Expenses.User;
 
 /**
@@ -32,7 +33,7 @@ public class ExpensesDemo {
         */
         char[] tpId = new char[]{'A','C','F'};
         /* UTILIZADOR 1*/
-        User utilizador1 = new User(tpId,"Isabel Silva","isabel.6.06@hotmail.com",data,despesa1);
+        User utilizador1 = new User(tpId,"Isabel Silva","isabel.6.06@hotmail.com",data,despesa1,GENERO.FEMININO);
         
         /* Prints */
         

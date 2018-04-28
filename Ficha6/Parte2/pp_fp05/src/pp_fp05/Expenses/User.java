@@ -1,5 +1,5 @@
 package pp_fp05.Expenses;
-
+import pp_fp05.Expenses.GENERO;
 import java.util.Date;
 
 /**
@@ -35,7 +35,10 @@ public class User {
     /**
      * Datas relativas a estatuto({@link User})
      */
+    private GENERO genero;
+    
     private final int NUMERO_LIMITE = 10;
+    
     private Date[] dateEstatuto = new Date[NUMERO_LIMITE];
     /**
      * Dias com Premium({@link User})
@@ -53,14 +56,16 @@ public class User {
      * ({@link User})
      * @param tempExpenses Colecao de despesas({@link Expense}) do utilizador
      * ({@link User})
+     * @param genero MASC/FEM
      */
-    public User(char[] tempId, String tempName, String tempEmail, Date tempBithDate, Expense[] tempExpenses){
+    public User(char[] tempId, String tempName, String tempEmail, Date tempBithDate, Expense[] tempExpenses, GENERO genero){
         this.id = tempId;
         this.name = tempName;
         this.email = tempEmail;
         this.birthDate = tempBithDate;
         this.expenses = tempExpenses;
         this.estatuto = "Free";
+        this.genero = genero;
         this.n=0;
     }
 
@@ -129,7 +134,9 @@ public class User {
         this.diasPremium = diasPremium;
     }
 
-    
+    public void getGenero() {
+        this.genero.imprime(this.genero);
+    }
     private void verificaEstatuto(){
         int cont=0,j=0;
         for (int i=0;i<this.expenses.length;i++) {
@@ -142,10 +149,10 @@ public class User {
         this.diasPremium = cont;
     }
     
-    public void Premium(String typeDespesas, Date inicio, Date fim){
+    public void Premium(DESPESA typeDespesas, Date inicio, Date fim){
         boolean x = true;
         float maior = 0.0F, custo = 0.0F;
-        String type = "";
+        DESPESA type;
         if(this.diasPremium > 0){
             for (Expense expense : this.expenses) {
                 if (expense.getData() == inicio || x == true) {
@@ -170,7 +177,6 @@ public class User {
                 if(custo > 0){
                     System.out.println("Despesa total: " + custo);
                     System.out.println("Maior despesa: " + maior);
-                    System.out.println("Tipo da despesa com maior valor: " + type);
                 }
             }
         }
